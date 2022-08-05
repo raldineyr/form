@@ -14,8 +14,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.time.OffsetDateTime;
-import java.util.Date;
 import java.util.Optional;
 
 @Service @AllArgsConstructor
@@ -23,7 +21,6 @@ public class CustomerService {
 
     private CustomerRepository customerRepository;
     private CustomerConverter customerConverter;
-    private ModelMapper modelMapper;
 
     @Transactional
     public Customer saveCustomer(CustomerRequest customerRequest) {
