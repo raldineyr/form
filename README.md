@@ -5,6 +5,20 @@
 #### GET Listar todos os clientes: http://localhost:8080/customers
 #### GET Listar cliente especifico: http://localhost:8080/customers/{id do cliente} 
 #### POST Criar um cliente: http://localhost:8080/customers
+
+Exemplo Post:   
+{  
+   "name": "Luiz Gonzaga",  
+   "rg": "1398695752",  
+   "cpf": "0000584569",  
+   "phone": "984078221",  
+   "birthDate":"1994-05-11",  
+   "email": "luizGonzaga@gmail.com",  
+   "fatherName": "Januário José",  
+   "motherName": "Ana Batista"  
+}
+
+
 #### PUT Atualizar ccompletamente um cliente: http://localhost:8080/customers/{id do cliente}
 #### PATCH Atualizar parcialmente um cliente: http://localhost:8080/customers/{id do cliente} 
 #### DELETE Deletar um cliente: http://localhost:8080/customers/{id do cliente} 
