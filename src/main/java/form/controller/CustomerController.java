@@ -23,8 +23,8 @@ import java.util.List;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping(path = "/customers",produces = MediaType.APPLICATION_JSON_VALUE)
-public class CustomerController extends RepresentationModel<CustomerResponse> {
+@RequestMapping(path = "/customers", produces = MediaType.APPLICATION_JSON_VALUE)
+public class CustomerController extends RepresentationModel<CustomerController> {
 
     private CustomerRepository customerRepository;
     private CustomerService customerService;
@@ -65,8 +65,7 @@ public class CustomerController extends RepresentationModel<CustomerResponse> {
 
 
     @PutMapping("/{id}")
-    public CustomerResponse fullyUpdateCustomer(
-            @PathVariable("id") Long id, @RequestBody CustomerRequest customerRequest){
+    public CustomerResponse fullyUpdateCustomer(@Valid @PathVariable("id") Long id ,  @RequestBody CustomerRequest customerRequest){
         customerRequest.setId(id);
         Customer customerFullyChecked = customerService.saveFullyUpdates(customerRequest);
 
@@ -75,8 +74,7 @@ public class CustomerController extends RepresentationModel<CustomerResponse> {
 
 
     @PatchMapping("/{id}")
-    public CustomerResponse incrementallyUpdateCustomer(
-            @PathVariable("id") Long id, @RequestBody CustomerRequest customerRequest){
+    public CustomerResponse incrementallyUpdateCustomer(@Valid @PathVariable("id") Long id, @RequestBody CustomerRequest customerRequest){
 
         customerRequest.setId(id);
         Customer customerIncrementallyChecked = customerService.saveIncrementallyUpdates(customerRequest);
